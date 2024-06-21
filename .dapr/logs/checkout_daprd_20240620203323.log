@@ -1,0 +1,60 @@
+Starting Dapr with id checkout. HTTP Port: 62602. gRPC Port: 62603
+Checking if Dapr sidecar is listening on HTTP port 62602
+time="2024-06-20T20:33:23.50095+01:00" level=info msg="Starting Dapr Runtime -- version 1.13.2 -- commit f09b193d8ac62bef6c0fd5452a00d2a49cd0d134" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.501007+01:00" level=info msg="Log level set to: info" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.50117+01:00" level=warning msg="mTLS is disabled. Skipping certificate request and tls validation" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.security type=log ver=1.13.2
+time="2024-06-20T20:33:23.501581+01:00" level=warning msg="The default value for 'spec.metric.http.increasedCardinality' will change to 'false' in Dapr 1.14" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.502052+01:00" level=info msg="standalone mode configured" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.5021+01:00" level=info msg="app id: checkout" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.502089+01:00" level=info msg="metrics server started on :62604/" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.502181+01:00" level=info msg="Dapr trace sampler initialized: DaprTraceSampler(P=1.000000)" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.502474+01:00" level=info msg="local service entry announced: checkout -> 192.168.1.140:62605" app_id=checkout component="nr (mdns/v1)" instance=Alices-MBP.offthehook.local scope=dapr.contrib type=log ver=1.13.2
+time="2024-06-20T20:33:23.502499+01:00" level=info msg="Initialized name resolution to mdns" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.502552+01:00" level=info msg="Loading components…" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.510473+01:00" level=info msg="Component loaded: pubsub (pubsub.redis/v1)" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.processor type=log ver=1.13.2
+time="2024-06-20T20:33:23.510573+01:00" level=info msg="Waiting for all outstanding components to be processed…" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.519309+01:00" level=info msg="Using 'statestore' as actor state store" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.processor.state type=log ver=1.13.2
+time="2024-06-20T20:33:23.519379+01:00" level=info msg="Component loaded: statestore (state.redis/v1)" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.processor type=log ver=1.13.2
+time="2024-06-20T20:33:23.519397+01:00" level=info msg="All outstanding components processed" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.519415+01:00" level=info msg="Loading endpoints…" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.519659+01:00" level=info msg="Waiting for all outstanding http endpoints to be processed…" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.519675+01:00" level=info msg="All outstanding http endpoints processed" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.519684+01:00" level=warning msg="App channel is not initialized. Did you configure an app-port?" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.channels type=log ver=1.13.2
+time="2024-06-20T20:33:23.519787+01:00" level=info msg="gRPC server listening on TCP address: :62603" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.grpc.api type=log ver=1.13.2
+time="2024-06-20T20:33:23.519798+01:00" level=info msg="Enabled gRPC tracing middleware" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.grpc.api type=log ver=1.13.2
+time="2024-06-20T20:33:23.519803+01:00" level=info msg="Enabled gRPC metrics middleware" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.grpc.api type=log ver=1.13.2
+time="2024-06-20T20:33:23.51985+01:00" level=info msg="Registering workflow engine for gRPC endpoint: [::]:62603" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.grpc.api type=log ver=1.13.2
+time="2024-06-20T20:33:23.51987+01:00" level=info msg="API gRPC server is running on port 62603" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.51991+01:00" level=info msg="Enabled max body size HTTP middleware with size 4 MB" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.http type=log ver=1.13.2
+time="2024-06-20T20:33:23.519917+01:00" level=info msg="Enabled tracing HTTP middleware" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.http type=log ver=1.13.2
+time="2024-06-20T20:33:23.519922+01:00" level=info msg="Enabled metrics HTTP middleware" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.http type=log ver=1.13.2
+time="2024-06-20T20:33:23.520105+01:00" level=info msg="HTTP server listening on TCP address: :62602" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.http type=log ver=1.13.2
+time="2024-06-20T20:33:23.520122+01:00" level=info msg="HTTP server is running on port 62602" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.520127+01:00" level=info msg="The request body size parameter is: 4" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.520152+01:00" level=info msg="gRPC server listening on TCP address: :62605" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.grpc.internal type=log ver=1.13.2
+time="2024-06-20T20:33:23.52016+01:00" level=info msg="Enabled gRPC tracing middleware" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.grpc.internal type=log ver=1.13.2
+time="2024-06-20T20:33:23.520165+01:00" level=info msg="Enabled gRPC metrics middleware" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.grpc.internal type=log ver=1.13.2
+time="2024-06-20T20:33:23.52018+01:00" level=info msg="Internal gRPC server is running on port 62605" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.520858+01:00" level=info msg="Configuring actors placement provider 'placement'. Configuration: 'placement:localhost:50005'" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.actor type=log ver=1.13.2
+time="2024-06-20T20:33:23.520887+01:00" level=info msg="Configuring actor reminders provider 'default'. Configuration: ''" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.actor type=log ver=1.13.2
+time="2024-06-20T20:33:23.521426+01:00" level=info msg="Actor runtime started. Actor idle timeout: 1h0m0s. Actor scan interval: 30s" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.actor type=log ver=1.13.2
+time="2024-06-20T20:33:23.521627+01:00" level=info msg="Configuring workflow engine with actors backend" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.521643+01:00" level=info msg="Registering component for dapr workflow engine..." app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.521654+01:00" level=info msg="Initializing Dapr workflow component" app_id=checkout component="dapr (workflow.dapr/v1)" instance=Alices-MBP.offthehook.local scope=dapr.contrib type=log ver=1.13.2
+time="2024-06-20T20:33:23.521706+01:00" level=info msg="Workflow engine initialized." app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.521715+01:00" level=warning msg="app channel not initialized, make sure -app-port is specified if pubsub subscription is required" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.processor.pubsub type=log ver=1.13.2
+time="2024-06-20T20:33:23.521873+01:00" level=warning msg="failed to read from bindings: app channel not initialized " app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.521905+01:00" level=info msg="dapr initialized. Status: Running. Init Elapsed 19ms" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime type=log ver=1.13.2
+time="2024-06-20T20:33:23.63099+01:00" level=info msg="Placement tables updated, version: 0" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.runtime.actors.placement type=log ver=1.13.2
+Checking if Dapr sidecar is listening on GRPC port 62603
+Dapr sidecar is up and running.
+Updating metadata for cliPID: 67361
+Updating metadata for app command: java -jar target/CheckoutService-0.0.1-SNAPSHOT.jar
+Updating metadata for appPID: 67378
+You're up and running! Dapr logs will appear here.
+
+time="2024-06-20T20:33:28.39349+01:00" level=info msg="Received signal 'interrupt'; beginning shutdown" app_id=checkout instance=Alices-MBP.offthehook.local scope=dapr.signals type=log ver=1.13.2
+
+termination signal received: shutting down
+Exited Dapr successfully
+Exited App successfully
