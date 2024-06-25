@@ -14,6 +14,8 @@ package com.service.controller;
 
 import lombok.Getter;
 import lombok.Setter;
+import reactor.core.publisher.Mono;
+
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +23,11 @@ import org.springframework.web.bind.annotation.*;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import ch.qos.logback.core.subst.Token.Type;
 import io.dapr.client.DaprClient;
 import io.dapr.client.DaprClientBuilder;
+import io.dapr.client.domain.InvokeBindingRequest;
+import io.dapr.utils.TypeRef;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,13 +44,17 @@ public class BatchProcessingServiceController {
     private static final Logger logger = LoggerFactory.getLogger(BatchProcessingServiceController.class);
     private static final String cronBindingPath = "/cron";
     private static final String sqlBindingName = "sqldb";
+    private static final String httpBindingName = "http-trace";
+    private static final TypeRef String = null;
+    
     
     @PostMapping(path = cronBindingPath, consumes = MediaType.ALL_VALUE)
     public ResponseEntity<String> processBatch() throws Exception {
         
-        logger.info("Processing batch..");
+        logger.info("Calling http binding");
 
         Orders ordList = this.loadOrdersFromFile("orders.json");
+        Mono ret;
 
         try (DaprClient client = new DaprClientBuilder().build()) {
 
@@ -56,14 +65,21 @@ public class BatchProcessingServiceController {
                     order.orderid, order.customer, order.price);
                 logger.info(sqlText);
     
-                Map<String, String> metadata = new HashMap<String, String>();
-                metadata.put("sql", sqlText);
+            //     Map<String, String> metadata = new HashMap<String, String>();
+            //     metadata.put("sql", sqlText);
  
                 // Invoke sql output binding using Dapr SDK
-                client.invokeBinding(sqlBindingName, "exec", null, metadata).block();
+            //resp = client.invokeBinding(httpBindingName, "post", sqlText).block();
+                //client.invokeBinding(httpBindingName, "post",).block();
+                
+                InvokeBindingRequest request = new InvokeBindingRequest(httpBindingName, "post");
+                request.setData(sqlText);
+
+                //TypeRef<List<String>> listOfStrings = new TypeRef<List<String>>(){};
+                ret = client.invokeBinding(request, listOfStrings);
             } 
 
-            logger.info("Finished processing batch");
+            logger.info("Finished calling http binding", ret);
 
             return ResponseEntity.ok("Finished processing batch");
 
@@ -88,7 +104,8 @@ public class BatchProcessingServiceController {
         }
     }
 }
-            
+        
+
 @Getter
 @Setter
 class Order {

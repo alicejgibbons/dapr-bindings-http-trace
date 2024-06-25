@@ -1,0 +1,7 @@
+version: 1
+apps:
+  - appID: checkout
+    appDirPath: .
+    command: ["java", "-jar", "target/CheckoutService-0.0.1-SNAPSHOT.jar"]
+
+#  dapr run --app-id checkout --resources-path ./components -- java -jar target/CheckoutService-0.0.1-SNAPSHOT.jar
